@@ -1,4 +1,4 @@
-This Repository allows to deploy Kong Api Gateway and Konga Kong management GUI as docker containers by using the provided docker-compose files.
+This Repository allows to deploy [Kong](https://konghq.com/) Api Gateway and [Konga](https://github.com/pantsel/konga) Kong admin GUI as docker containers by using the provided docker-compose files.
 
 Also, it provides a Dockerfile for building a custom Kong image which includes the custom plugins [request-throttling](https://github.com/millenc/kong-plugin-request-throttling) and [header-checker](https://github.com/albertocr/kong-plugin-header-checker) which can be deployed using the same docker-compose files.
 
@@ -10,12 +10,15 @@ docker-compose -f docker-compose-kong-v0.14 up
 ### For -at least- version 1.3.X
 docker-compose -f docker-compose-kong-v1.3.yml up
 
+If you want to deploy the docker image that can be created with the Dockerfile, which includes the custom plugins, just change in the docker-compose-kong-v1.3.yml the kong image name "kong:1.3.0-ubuntu" to "{custom_kong_image_name:custom_kong_image_tag}".
+
 ## Deploy a httpbin simple example service to test the API GW 
 docker run -p 80:80 kennethreitz/httpbin
 
 ## Konga setup
-1. Create a new user
-2. Add the connection to Kong by indicating the IP Gateway of the container in the docker network
+1. In a web browser go to localhost:1337
+2. Create a new user
+3. Add the connection to Kong by indicating the IP Gateway of the container in the docker network
    obtained by doing `docker inspect {container_id}`
 
 ## redis-cli
