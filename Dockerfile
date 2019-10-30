@@ -8,9 +8,6 @@ ENV KONG_PLUGINS bundled,whispir-token-auth
 
 ADD plugins/kong/plugins/ /kong-plugins/kong/
 
-# Remove git and other unneeded dependencies
-RUN apt-get purge --auto-remove git -y && apt purge `dpkg --list | grep ^rc | awk '{ print $2; }'`
-
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 8000 8443 8001 8444
