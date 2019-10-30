@@ -1,9 +1,9 @@
 MAINTAINER Qince Yang, qince.yang@accenture.com
 
 ENV KONG_LUA_PACKAGE_PATH /kong-plugins/?.lua;;
-ENV KONG_PLUGINS bundled,whispir-token-auth
+ENV KONG_PLUGINS bundled,whispir_token_auth
 
-ADD kong/ /kong-plugins/kong/
+ADD plugins/kong/plugins/ /kong-plugins/kong/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
