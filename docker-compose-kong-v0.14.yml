@@ -42,8 +42,8 @@ services:
       KONG_PG_USER: ${KONG_PG_USER:-kong}
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
-      KONG_PLUGINS: bundled, helloworld, headerchecker
-      KONG_LUA_PACKAGE_PATH: /plugins/?.lua
+      KONG_PLUGINS: bundled, whispir-token-auth 
+      KONG_LUA_PACKAGE_PATH: /kong-plugins/?.lua
     networks:
       - kong-net
     ports:
