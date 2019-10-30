@@ -1,3 +1,5 @@
+FROM kong:1.3.0-ubuntu	
+
 MAINTAINER Qince Yang, qince.yang@accenture.com
 
 ENV KONG_LUA_PACKAGE_PATH /kong-plugins/?.lua;;
