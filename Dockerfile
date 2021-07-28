@@ -1,4 +1,4 @@
-FROM kong:1.3.0-ubuntu	
+FROM kong:2.5.0-ubuntu
 
 MAINTAINER Qince Yang, qince.yang@accenture.com
 
